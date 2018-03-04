@@ -174,3 +174,19 @@ Stack trace:
 #11 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(92): Illuminate\Foundation\Console\Kernel->bootstrap()
 #12 E:\xampp\htdocs\hass\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #13 {main}  
+[2018-03-04 19:02:14] developpement.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method [package]' in E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Support\ServiceProvider.php:226
+Stack trace:
+#0 E:\xampp\htdocs\hass\vendor\maatwebsite\excel\src\Maatwebsite\Excel\ExcelServiceProvider.php(45): Illuminate\Support\ServiceProvider->__call('package', Array)
+#1 E:\xampp\htdocs\hass\vendor\maatwebsite\excel\src\Maatwebsite\Excel\ExcelServiceProvider.php(45): Maatwebsite\Excel\ExcelServiceProvider->package('maatwebsite/exc...')
+#2 [internal function]: Maatwebsite\Excel\ExcelServiceProvider->boot()
+#3 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Container\Container.php(526): call_user_func_array(Array, Array)
+#4 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(703): Illuminate\Container\Container->call(Array)
+#5 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(685): Illuminate\Foundation\Application->bootProvider(Object(Maatwebsite\Excel\ExcelServiceProvider))
+#6 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(Maatwebsite\Excel\ExcelServiceProvider), 15)
+#7 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(686): array_walk(Array, Object(Closure))
+#8 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\BootProviders.php(15): Illuminate\Foundation\Application->boot()
+#9 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(183): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#10 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(195): Illuminate\Foundation\Application->bootstrapWith(Array)
+#11 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(92): Illuminate\Foundation\Console\Kernel->bootstrap()
+#12 E:\xampp\htdocs\hass\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 {main}  
