@@ -9,7 +9,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "5d3ea85d-ace9-4298-a287-79df5881a190"
+    secure: very_long_encrypted_token
     app: hassmaster 
 
   
