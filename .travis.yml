@@ -3,6 +3,7 @@ php:
   - '5.5'
 
 script:
+  - composer install
   - phpunit
    
 
