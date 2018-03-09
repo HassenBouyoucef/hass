@@ -6,9 +6,6 @@ script:
    vendor/bin/phpunit
    
 
-deploy:
-  provider: heroku
-  
-    app: hassmaster 
+
 
   
