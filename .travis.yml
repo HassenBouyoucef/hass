@@ -6,11 +6,8 @@ script:
   - composer install
   - phpunit
 
-  deploy:
-   provider: heroku
-   
-     app: hassmaster 
-   
+
+
 
 
 
