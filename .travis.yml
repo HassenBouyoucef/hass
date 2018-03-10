@@ -8,8 +8,7 @@ script:
 
 deploy:
   provider: heroku
-  api_key:
-    secure: "YOUR ENCRYPTED API KEY"
+  
   app: my-app-123
 
 
