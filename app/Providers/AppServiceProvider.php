@@ -13,10 +13,9 @@ class AppServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		//
-		
-		if(env('REDIRECT_HTTPS')) {
-            $url->formatScheme('https');
-        }
+		App::bind('path.public', function() {
+		    return base_path().'/public_html';
+		});
 	}
 
 	/**
@@ -30,10 +29,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		
-		if(env('REDIRECT_HTTPS')) {
-            $this->app['request']->server->set('HTTPS', true);
-        }
+		$this->app->bind(
+			'Illuminate\Contracts\Auth\Registrar',
+			'App\Services\Registrar'
+		);
 	}
 
 }
