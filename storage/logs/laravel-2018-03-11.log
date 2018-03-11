@@ -1,0 +1,18 @@
+[2018-03-11 10:28:07] developpement.ERROR: exception 'InvalidArgumentException' with message 'Command "make:auth" is not defined.
+
+Did you mean one of these?
+    make:migration
+    make:controller
+    make:middleware
+    make:request
+    make:provider
+    make:console
+    make:event
+    make:model
+    make:command' in E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php:549
+Stack trace:
+#0 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php(192): Symfony\Component\Console\Application->find('make:auth')
+#1 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(94): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 E:\xampp\htdocs\hass\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
