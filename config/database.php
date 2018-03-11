@@ -1,5 +1,11 @@
 <?php
 
+$url = parse_url(getenv('DATABASE_URL'));
+$host = $url["host"]??null;
+$username = $url["user"]??null;
+$password = $url["pass"]??null;
+$database = substr($url["path"],1)??null;
+
 return [
 
 	/*
@@ -26,7 +32,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_production',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -58,6 +64,18 @@ return [
 			'database'  => env('DB_DATABASE', 'forge'),
 			'username'  => env('DB_USERNAME', 'forge'),
 			'password'  => env('DB_PASSWORD', ''),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+			'strict'    => false,
+		],
+
+		'mysql_production' => [
+			'driver'    => 'mysql',
+			'host'      => $host,
+			'database'  => $database,
+			'username'  => $username,
+			'password'  => $password
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
