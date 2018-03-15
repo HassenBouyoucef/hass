@@ -1,0 +1,25 @@
+[2018-03-14 19:43:00] developpement.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+' in E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=;dbn...', NULL, NULL, Array)
+#1 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=;dbn...', Array, Array)
+#2 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(58): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(47): Illuminate\Database\Connectors\ConnectionFactory->createSingleConnection(Array)
+#4 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(177): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql_productio...')
+#5 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(65): Illuminate\Database\DatabaseManager->makeConnection('mysql_productio...')
+#6 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(167): Illuminate\Database\DatabaseManager->connection(NULL)
+#7 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(135): Illuminate\Database\Migrations\DatabaseMigrationRepository->getConnection()
+#8 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(398): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#9 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php(101): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#10 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php(54): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#11 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#12 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Container\Container.php(526): call_user_func_array(Array, Array)
+#13 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Console\Command.php(115): Illuminate\Container\Container->call(Array)
+#14 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(257): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Console\Command.php(101): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php(874): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php(195): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 E:\xampp\htdocs\hass\vendor\symfony\console\Symfony\Component\Console\Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(94): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 E:\xampp\htdocs\hass\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 {main}  
