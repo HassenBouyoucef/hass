@@ -37,7 +37,7 @@
   <link href="{{url('fonts/bootstrap-glyphicons.css') }}" rel="stylesheet" >
   <body>
     <header>
-      {!! HTML::image("/../img/joris.jpg", "Logo",['class' => ' fond ']) !!}  
+      {!! HTML::image("img/joris.jpg", "Logo",['class' => ' fond ']) !!}  
     </header>
     
     <nav class="navbar navbar-inverse">
