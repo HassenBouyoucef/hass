@@ -36,6 +36,15 @@ class CreateUsersTable extends Migration {
 		$user->password = bcrypt('admin');
 		$user->niveau = 2;
 		$user->save();
+		$user = new User;
+		$user->nom = 'hass';
+		$user->prenom = 'bou';
+		$user->identifiant = 'hass';
+		$user->email = 'hass@hass.fr';
+		$user->password = 'hass';
+		$user->niveau = 2;
+		$user->save();
+		
 	}
 
 	/**
