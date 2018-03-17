@@ -4,16 +4,10 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
  
 $host = $url["host"];
-echo "host $host ";
-echo "<br/>";
 $username = $url["user"];
-echo "user $username ";
-echo "<br/>";
 $password = $url["pass"];
-echo "password $password ";
-echo "<br/>";
 $database = substr($url["path"], 1);
-echo "database $database ";
+
 
 return [
 
@@ -76,6 +70,7 @@ return [
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',
+        'strict'    => false,
     ],
 
 		'mysql' => [
