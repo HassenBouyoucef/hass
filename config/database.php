@@ -7,7 +7,7 @@ $host = $url["host"];
 echo "host $host ";
 echo "<br/>";
 $username = $url["user"];
-echo "user $user ";
+echo "user $username ";
 echo "<br/>";
 $password = $url["pass"];
 echo "password $password ";
@@ -67,7 +67,7 @@ return [
 			'prefix'   => '',
 		],
 
-		'mysql_prod' => array(
+		'mysql_prod' => [
         'driver'    => 'mysql',
         'host'      => $host,
         'database'  => $database,
@@ -76,7 +76,7 @@ return [
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',
-    ),
+    ],
 
 		'mysql' => [
 			'driver'    => 'mysql',
