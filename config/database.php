@@ -4,10 +4,13 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
  
 $host = $url["host"];
-echo "You must $host ";
+echo "host $host ";
 $username = $url["user"];
+echo "user $user ";
 $password = $url["pass"];
+echo "password $password ";
 $database = substr($url["path"], 1);
+echo "database $database ";
 
 return [
 
