@@ -1,0 +1,3 @@
+[2018-03-19 20:40:03] developpement.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Routing\UrlGenerator::forceScheme()' in E:\xampp\htdocs\hass\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php:210
+Stack trace:
+#0 {main}  
