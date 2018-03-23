@@ -1,21 +1,53 @@
 
-<IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews
-    </IfModule>
+### REWRITES AND REDIRECTS
+# REQUEST METHODS: GET,POST,PUT,DELETE,CONNECT,OPTIONS,PATCH,PROPFIND,
+#                  PROPPATCH,MKCOL,COPY,MOVE,LOCK,UNLOCK
 
-    RewriteEngine On
+## REWRITE DEFAULTS
+RewriteEngine On
+RewriteBase /
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+## REQUIRE SUBDOMAIN
+RewriteCond %{HTTP_HOST} !^$
+RewriteCond %{HTTP_HOST} !^subdomain\.domain\.tld$ [NC]
+RewriteRule ^/(.*)$ http://subdomain.domain.tld/$1 [L,R=301]
 
-    # Handle Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+## SEO REWRITES
+RewriteRule ^(.*)/ve/(.*)$    $1/voluntary-employee/$2 [L,R=301]
+RewriteRule ^(.*)/hsa/(.*)$     $1/health-saving-account/$2 [L,R=301]
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-</IfModule>
+## WORDPRESS
+RewriteCond %{REQUEST_FILENAME} !-f    # Existing File
+RewriteCond %{REQUEST_FILENAME} !-d    # Existing Directory
+RewriteRule . /index.php [L]
+
+## ALTERNATIVE ANTI-HOTLINKING
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(subdomain\.)?domain\.tld/.*$ [NC]
+RewriteRule ^.*.(bmp|tif|gif|jpg|jpeg|jpe|png)$ - [F]
+
+## REDIRECT HOTLINKERS
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(subdomain\.)?domain\.tld/.*$ [NC]
+RewriteRule ^.*\.(bmp|tif|gif|jpg|jpeg|jpe|png)$ http://google.com [R]
+
+## DENY REQUEST BASED ON REQUEST METHOD
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|OPTIONS|HEAD)$ [NC]
+RewriteRule ^.*$ - [F]
+
+## REDIRECT UPLOADS
+RewriteCond %{REQUEST_METHOD} ^(PUT|POST)$ [NC]
+RewriteRule ^(.*)$ /cgi-bin/form-upload-processor.cgi?p=$1 [L,QSA]
+
+## REQUIRE SSL EVEN WHEN MOD_SSL IS NOT LOADED
+RewriteCond %{HTTPS} !=on [NC]
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+### ALTERNATATIVE TO USING ERRORDOCUMENT
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /error.php [L]
+
+## SEO REDIRECTS
+Redirect 301 /2006/oldfile.html http://subdomain.domain.tld/newfile.html
+RedirectMatch 301 /o/(.*)$ http://subdomain.domain.tld/s/dl/$1
