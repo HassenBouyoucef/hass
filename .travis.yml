@@ -11,8 +11,7 @@ deploy:
   api_key:
     secure: "018b8b13-2cea-4020-9c3a-3ae0b9348ea9"
   app: projetdevops
-  on:
-  branch: develop
+  
 
 
 
