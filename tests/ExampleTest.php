@@ -21,7 +21,7 @@ class ExampleTest extends TestCase {
 		$this->assertEquals(200, $response->getStatusCode())  ;
 	}
 
-	public function testSeConnecter()
+	public function test_login()
 {
     $this->visit('/')
          ->click('se connecter')
