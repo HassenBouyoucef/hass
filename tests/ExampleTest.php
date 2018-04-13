@@ -14,12 +14,7 @@ class ExampleTest extends TestCase {
 		$this->assertEquals(200, $response->getStatusCode())  ;
 	}
 
-	public function testhtacces()
-	{
-		$response = $this->call('GET', '/auth/login');
-
-		$this->assertEquals(200, $response->getStatusCode())  ;
-	}
+	
 
 	/*public function test_login()
 {
